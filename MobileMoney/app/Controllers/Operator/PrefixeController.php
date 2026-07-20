@@ -42,7 +42,6 @@ class PrefixeController extends BaseController
         }
     }
 
-    // Supprime un préfixe
     public function delete($id = null)
     {
         if ($id && $this->model->find($id)) {
