@@ -75,14 +75,7 @@ class DashboardController extends BaseController
 
         $this->clientModel->update((int) $client['id'], ['solde' => (float) $client['solde'] - $totalDebit]);
         $this->clientModel->update((int) $recipient['id'], ['solde' => (float) $recipient['solde'] + $amount]);
-
-        $this->transactionModel->insert([
-            'id_client' => (int) $client['id'],
-            'id_type_operation' => (int) $operation['id'],
-            'montant' => $amount,
-            'frais' => $fee,
-            'numero_destination' => $numeroDestination,
-        ]);
+        $this->persistTransferTransactions($client, $recipient, $amount, $fee, $numeroDestination, $operation);
 
         $db->transComplete();
 
@@ -91,6 +84,25 @@ class DashboardController extends BaseController
         }
 
         return redirect()->to('/index.php/client/dashboard')->with('success', 'Transfert effectué avec succès.');
+    }
+
+    protected function persistTransferTransactions(array $sender, array $recipient, float $amount, float $fee, string $numeroDestination, array $operation): void
+    {
+        $this->transactionModel->insert([
+            'id_client' => (int) $sender['id'],
+            'id_type_operation' => (int) $operation['id'],
+            'montant' => $amount,
+            'frais' => $fee,
+            'numero_destination' => $numeroDestination,
+        ]);
+
+        $this->transactionModel->insert([
+            'id_client' => (int) $recipient['id'],
+            'id_type_operation' => (int) $operation['id'],
+            'montant' => $amount,
+            'frais' => 0.0,
+            'numero_destination' => $sender['numero_telephone'] ?? '',
+        ]);
     }
 
     private function processSingleOperation(string $operationName)

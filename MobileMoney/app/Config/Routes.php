@@ -26,6 +26,7 @@ $routes->group('admin', function ($routes) {
     $routes->get('types-operations/delete/(:num)', 'Operator\OperationController::delete/$1');
 
     $routes->get('baremes', 'Operator\BaremeController::index');
+    $routes->get('baremes/(:num)', 'Operator\BaremeController::index/$1');
     $routes->post('baremes/store', 'Operator\BaremeController::store');
     $routes->post('baremes/update/(:num)', 'Operator\BaremeController::update/$1');
     $routes->get('baremes/delete/(:num)', 'Operator\BaremeController::delete/$1');
