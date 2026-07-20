@@ -1079,3 +1079,77 @@ in APPPATH/Controllers/Operator/PrefixeController.php on line 14.
  5 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
  6 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
  7 SYSTEMPATH/rewrite.php(44): require_once('/home/dylqn/Mandresy/Examen SI/MobileMoneyProject/MobileMoney/public/index.php')
+CRITICAL - 2026-07-20 12:06:46 --> CodeIgniter\Cache\Exceptions\CacheException: Cache unable to write to "/home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/writable/cache/".
+[Method: GET, Route: /]
+in SYSTEMPATH/Cache/Handlers/FileHandler.php on line 66.
+ 1 SYSTEMPATH/Cache/Handlers/FileHandler.php(66): CodeIgniter\Cache\Exceptions\CacheException::forUnableToWrite()
+ 2 SYSTEMPATH/Cache/CacheFactory.php(63): CodeIgniter\Cache\Handlers\FileHandler->__construct()
+ 3 SYSTEMPATH/Config/Services.php(129): CodeIgniter\Cache\CacheFactory::getHandler()
+ 4 SYSTEMPATH/Config/BaseService.php(325): CodeIgniter\Config\Services::cache()
+ 5 SYSTEMPATH/Config/BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic()
+ 6 SYSTEMPATH/Config/Services.php(124): CodeIgniter\Config\BaseService::getSharedInstance()
+ 7 SYSTEMPATH/Config/BaseService.php(334): CodeIgniter\Config\Services::cache()
+ 8 SYSTEMPATH/Config/BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic()
+ 9 SYSTEMPATH/Config/Services.php(454): CodeIgniter\Config\BaseService::get()
+10 SYSTEMPATH/Config/BaseService.php(325): CodeIgniter\Config\Services::responsecache()
+11 SYSTEMPATH/Config/BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic()
+12 SYSTEMPATH/Config/Services.php(450): CodeIgniter\Config\BaseService::getSharedInstance()
+13 SYSTEMPATH/Config/BaseService.php(334): CodeIgniter\Config\Services::responsecache()
+14 SYSTEMPATH/CodeIgniter.php(178): CodeIgniter\Config\BaseService::__callStatic()
+15 SYSTEMPATH/Config/Services.php(164): CodeIgniter\CodeIgniter->__construct()
+16 SYSTEMPATH/Config/BaseService.php(325): CodeIgniter\Config\Services::codeigniter()
+17 SYSTEMPATH/Config/BaseService.php(264): CodeIgniter\Config\BaseService::__callStatic()
+18 SYSTEMPATH/Config/Services.php(159): CodeIgniter\Config\BaseService::getSharedInstance()
+19 SYSTEMPATH/Config/BaseService.php(334): CodeIgniter\Config\Services::codeigniter()
+20 SYSTEMPATH/Config/BaseService.php(203): CodeIgniter\Config\BaseService::__callStatic()
+21 SYSTEMPATH/Common.php(1096): CodeIgniter\Config\BaseService::get()
+22 SYSTEMPATH/Boot.php(403): service()
+23 SYSTEMPATH/Boot.php(163): CodeIgniter\Boot::initializeCodeIgniter()
+24 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark()
+ERROR - 2026-07-20 12:12:03 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/Database/SQLite3/Connection.php(111): SQLite3->__construct()
+#1 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query()
+#5 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/app/Controllers/Operator/OperatorController.php(20): CodeIgniter\Database\BaseBuilder->get()
+#6 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/CodeIgniter.php(974): App\Controllers\Operator\OperatorController->showGains()
+#7 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController()
+#8 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#12 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/Database/SQLite3/Connection.php:118
+Stack trace:
+#0 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query()
+#4 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/app/Controllers/Operator/OperatorController.php(20): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/CodeIgniter.php(974): App\Controllers\Operator\OperatorController->showGains()
+#6 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController()
+#7 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#9 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#10 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#11 /home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('...')
+#12 {main}
+CRITICAL - 2026-07-20 12:12:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: SQLite3 error: Unable to open database: unable to open database file
+[Method: GET, Route: admin/gains]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1659): CodeIgniter\Database\BaseConnection->query()
+ 4 APPPATH/Controllers/Operator/OperatorController.php(20): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/CodeIgniter.php(974): App\Controllers\Operator\OperatorController->showGains()
+ 6 SYSTEMPATH/CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/rama/ITU/Mr_Rojo/S4/MobileMoney/MobileMoney/public/index.php')
