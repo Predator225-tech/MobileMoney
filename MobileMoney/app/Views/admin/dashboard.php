@@ -36,6 +36,16 @@
             <div class="col-md-4">
                 <div class="card shadow-sm">
                     <div class="card-body text-center">
+                        <h5 class="card-title">Types d'opérations</h5>
+                        <p class="card-text">CRUD des opérations utilisées par les clients et les barèmes.</p>
+                        <a href="/admin/operations" class="btn btn-primary">Gérer les opérations</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
                         <h5 class="card-title">Barèmes de frais</h5>
                         <p class="card-text">Consultation et modification des frais fixes par tranche.</p>
                         <a href="/admin/baremes" class="btn btn-primary">Gérer les barèmes</a>

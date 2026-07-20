@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS transactions (
     id_type_operation INTEGER,
     montant REAL,
     frais REAL,
+    numero_destination TEXT,
     date_transaction DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY(id_client) REFERENCES clients(id),
     FOREIGN KEY(id_type_operation) REFERENCES types_operation(id)
