@@ -25,6 +25,9 @@
             <button type="submit" class="btn btn-primary">Se connecter</button>
         </form>
     </div>
+    <a href="<?= base_url('/admin/dashboard') ?>" class="btn btn-secondary" style="background-color: #6c757d; color: white; text-decoration: none; padding: 8px 15px; border-radius: 4px; font-size: 0.9em;">
+                Se connecter en tant qu'admin
+            </a>
 </div>
 </body>
 </html>
