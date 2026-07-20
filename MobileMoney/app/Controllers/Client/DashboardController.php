@@ -90,7 +90,7 @@ class DashboardController extends BaseController
             return redirect()->back()->with('error', 'Le transfert a échoué.');
         }
 
-        return redirect()->to('/client/dashboard')->with('success', 'Transfert effectué avec succès.');
+        return redirect()->to('/index.php/client/dashboard')->with('success', 'Transfert effectué avec succès.');
     }
 
     private function processSingleOperation(string $operationName)
