@@ -42,4 +42,19 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
         // $this->session = service('session');
     }
+    protected function normalizePhoneNumber(?string $value): string
+    {
+        if ($value === null) {
+            return '';
+        }
+
+        return preg_replace('/\D+/', '', (string) $value);
+    }
+
+    protected function isValidPhoneNumber(?string $value): bool
+    {
+        $number = $this->normalizePhoneNumber($value);
+
+        return $number !== '' && preg_match('/^\d{10}$/', $number) === 1;
+    }
 }

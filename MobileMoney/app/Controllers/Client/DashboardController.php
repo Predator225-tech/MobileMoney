@@ -41,10 +41,10 @@ class DashboardController extends BaseController
     public function transfer()
     {
         $client = $this->requireClient();
-        $numeroDestination = preg_replace('/\s+/', '', (string) $this->request->getPost('numero_destination'));
+        $numeroDestination = $this->normalizePhoneNumber($this->request->getPost('numero_destination'));
         $montant = $this->request->getPost('montant');
 
-        if ($numeroDestination === '' || ! preg_match('/^\d{9}$/', $numeroDestination)) {
+        if (! $this->isValidPhoneNumber($numeroDestination)) {
             return redirect()->back()->with('error', 'Le numéro du destinataire est invalide.');
         }
 

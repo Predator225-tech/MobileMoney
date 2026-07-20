@@ -14,13 +14,13 @@ class AuthController extends BaseController
 
     public function login()
     {
-        $numero = preg_replace('/\s+/', '', (string) $this->request->getPost('numero_telephone'));
+        $numero = $this->normalizePhoneNumber($this->request->getPost('numero_telephone'));
 
         if ($numero === '') {
             return redirect()->back()->with('error', 'Veuillez entrer un numéro de téléphone.');
         }
 
-        if (! preg_match('/^\d{10}$/', $numero)) {
+        if (! $this->isValidPhoneNumber($numero)) {
             return redirect()->back()->with('error', 'Le numéro doit contenir 10 chiffres.');
         }
 
